@@ -1,0 +1,188 @@
+/* Custom styling for Lawgee Construction Works & Architectural Consult */
+:root {
+  --color-primary: #0b1325;
+  --color-primary-light: #162238;
+  --color-gold: #c8892d;
+  --color-gold-hover: #b07420;
+  --color-gold-light: #fef5e7;
+  --color-accent: #2563eb;
+  --color-surface: #ffffff;
+  --color-surface-soft: #f8fafc;
+  --color-border: #e2e8f0;
+  --color-text-main: #0f172a;
+  --color-text-muted: #64748b;
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Blueprint pattern background */
+.bg-blueprint {
+  background-color: #0b1325;
+  background-image: 
+    linear-gradient(rgba(200, 137, 45, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(200, 137, 45, 0.08) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.bg-grid-subtle {
+  background-size: 24px 24px;
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+}
+
+/* Gold Gradient Accents */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #dfa144 0%, #c8892d 50%, #9e6417 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.bg-gold-gradient {
+  background: linear-gradient(135deg, #dfa144 0%, #c8892d 100%);
+}
+
+.bg-gold-gradient-hover:hover {
+  background: linear-gradient(135deg, #c8892d 0%, #ab6e1b 100%);
+}
+
+/* Glassmorphism */
+.glass-dark {
+  background: rgba(11, 19, 37, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+/* Card hover animations */
+.card-hover-effect {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card-hover-effect:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 25px -5px rgba(11, 19, 37, 0.08), 0 10px 10px -5px rgba(11, 19, 37, 0.04);
+}
+
+/* Image overlay & zoom */
+.zoom-container {
+  overflow: hidden;
+}
+
+.zoom-container img {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.zoom-container:hover img {
+  transform: scale(1.05);
+}
+
+/* Certificate badge watermark */
+.certificate-frame {
+  position: relative;
+  border: 3px double #c8892d;
+  box-shadow: 0 0 20px rgba(200, 137, 45, 0.2);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Floating WhatsApp pulse */
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+.whatsapp-float-btn {
+  animation: pulse-ring 2.5s infinite;
+}
+
+/* Lightbox & Dialog Modal styles */
+.lightbox-modal,
+.dialog-modal {
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.lightbox-modal.active,
+.dialog-modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Scrollbar for popup dialog form */
+.modal-form-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: #c8892d #0f172a;
+}
+
+.modal-form-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal-form-scroll::-webkit-scrollbar-track {
+  background: #0f172a;
+  border-radius: 4px;
+}
+
+.modal-form-scroll::-webkit-scrollbar-thumb {
+  background: #c8892d;
+  border-radius: 4px;
+}
+
+.modal-form-scroll::-webkit-scrollbar-thumb:hover {
+  background: #dfa144;
+}
+
+/* Print styles */
+@media print {
+  .no-print {
+    display: none !important;
+  }
+  body {
+    color: #000;
+    background: #fff;
+  }
+}
