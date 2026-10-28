@@ -38,8 +38,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const filterValue = btn.getAttribute('data-filter');
 
         portfolioItems.forEach(item => {
-          const itemCategory = item.getAttribute('data-category');
-          if (filterValue === 'all' || itemCategory === filterValue) {
+          const itemCategory = item.getAttribute('data-category') || '';
+          if (filterValue === 'all' || itemCategory.includes(filterValue)) {
             item.classList.remove('hidden');
             item.classList.add('block');
           } else {
@@ -236,4 +236,136 @@ Please contact me back to discuss. Thank you.`;
       window.openQuoteModal();
     }, 300);
   }
+
+  // 8. Hero Featured Project Switcher (Home page)
+  const heroProjects = [
+    {
+      img: 'assets/images/modern-residence-floorplan-30x30.jpg',
+      title: 'Ahuja Contemporary Residence (G+1)',
+      location: 'Ashanti Region, Ghana',
+      category: '3D Elevation & 30\'x30\' Plan',
+      desc: 'Modern two-storey luxury elevation featuring complete 30\'x30\' ground and first floor plans with car parking, master suite, drawing room, and family lounge.',
+      stat1: '900 Sq Ft | G+1',
+      stat1Sub: 'Full 30\'x30\' Plans',
+      stat2: '100% Certified',
+      stat2Sub: 'Permit-Ready Package'
+    },
+    {
+      img: 'assets/images/structural-site-dimensions.jpg',
+      title: 'Structural Dimensional Construction',
+      location: 'Active Construction Site, Ghana',
+      category: 'Dimensional Site Execution',
+      desc: 'Active two-storey reinforced sandcrete blockwork execution with verified architectural dimensions (8.90m span, 5.50m garage, 2.80m ground height).',
+      stat1: '8.90m Span',
+      stat1Sub: 'Precision Measured',
+      stat2: 'Ghana BRRI',
+      stat2Sub: 'Sandcrete Standards'
+    },
+    {
+      img: 'assets/images/construction-to-luxury-finish.jpg',
+      title: 'Scaffolding to Luxury Turnkey Finish',
+      location: 'Completed Turnkey Project, Ghana',
+      category: 'Full Lifecycle Delivery',
+      desc: 'From initial reinforced concrete casting with site scaffolding to completed contemporary black luxury residence with warm architectural strip lighting.',
+      stat1: 'Full Lifecycle',
+      stat1Sub: 'Ground to Handover',
+      stat2: 'Turnkey Build',
+      stat2Sub: '100% Finished'
+    },
+    {
+      img: 'assets/images/design-to-sandcrete-reality.jpg',
+      title: 'Concept to Sandcrete Masonry Reality',
+      location: 'Ejisu – Ashanti Region',
+      category: 'Masonry & Block Moulding',
+      desc: 'Direct fidelity comparison: Upper 3D architectural villa render versus lower active Ghanaian sandcrete block moulding and site construction.',
+      stat1: 'Sandcrete Blocks',
+      stat1Sub: 'High Compressive',
+      stat2: '1:1 Fidelity',
+      stat2Sub: 'Render to Reality'
+    },
+    {
+      img: 'assets/images/compact-narrow-4m-residence.jpg',
+      title: 'Modern 4m Narrow-Lot Urban Villa',
+      location: 'Urban Plot, Ashanti Region',
+      category: 'Smart Space Architecture',
+      desc: 'Architectural efficiency on narrow plots: 4-meter frontage luxury two-storey home with exterior spiral staircase, glass terrace, and courtyard parking.',
+      stat1: '4m Frontage',
+      stat1Sub: 'Space-Optimized',
+      stat2: 'Smart Living',
+      stat2Sub: 'Contemporary 2-Storey'
+    },
+    {
+      img: 'assets/images/bungalow-3bed-ejisu.jpg',
+      title: '3-Bedroom Bungalow Design',
+      location: 'Ejisu, Ashanti Region',
+      category: 'Residential Design',
+      desc: 'Custom contemporary architectural floor plan with upper terrace balcony, landscaped veranda, and certified structural engineering drawings.',
+      stat1: '100% Certified',
+      stat1Sub: 'Permit-Ready Plans',
+      stat2: 'Ghana BRRI',
+      stat2Sub: 'Building Code'
+    }
+  ];
+
+  let currentHeroIndex = 0;
+  window.setHeroProject = function(index) {
+    if (index < 0 || index >= heroProjects.length) return;
+    currentHeroIndex = index;
+    const p = heroProjects[index];
+
+    const mainImg = document.getElementById('heroProjectImg');
+    const title = document.getElementById('heroProjectTitle');
+    const loc = document.getElementById('heroProjectLocation');
+    const cat = document.getElementById('heroProjectCategory');
+    const desc = document.getElementById('heroProjectDesc');
+    const s1 = document.getElementById('heroProjectStat1');
+    const s1Sub = document.getElementById('heroProjectStat1Sub');
+    const s2 = document.getElementById('heroProjectStat2');
+    const s2Sub = document.getElementById('heroProjectStat2Sub');
+    const counter = document.getElementById('heroProjectCounter');
+
+    if (mainImg) {
+      mainImg.src = p.img;
+      mainImg.setAttribute('data-img', p.img);
+      mainImg.setAttribute('data-title', p.title);
+      mainImg.setAttribute('data-desc', p.desc);
+    }
+    const fullBtn = document.getElementById('heroProjectFullBtn');
+    if (fullBtn) {
+      fullBtn.setAttribute('data-img', p.img);
+      fullBtn.setAttribute('data-title', p.title);
+      fullBtn.setAttribute('data-desc', p.desc);
+    }
+    if (title) title.textContent = p.title;
+    if (loc) loc.innerHTML = `<i class="fa-solid fa-location-dot text-amber-400 text-[10px]"></i> ${p.location}`;
+    if (cat) cat.textContent = p.category;
+    if (desc) desc.textContent = p.desc;
+    if (s1) s1.textContent = p.stat1;
+    if (s1Sub) s1Sub.textContent = p.stat1Sub;
+    if (s2) s2.textContent = p.stat2;
+    if (s2Sub) s2Sub.textContent = p.stat2Sub;
+    if (counter) counter.textContent = `${index + 1} / ${heroProjects.length}`;
+
+    // Highlight thumbnail
+    const thumbs = document.querySelectorAll('.hero-thumb-btn');
+    thumbs.forEach((th, i) => {
+      if (i === index) {
+        th.classList.add('ring-2', 'ring-amber-500', 'opacity-100', 'scale-105');
+        th.classList.remove('opacity-60');
+      } else {
+        th.classList.remove('ring-2', 'ring-amber-500', 'opacity-100', 'scale-105');
+        th.classList.add('opacity-60');
+      }
+    });
+  };
+
+  window.nextHeroProject = function() {
+    const next = (currentHeroIndex + 1) % heroProjects.length;
+    window.setHeroProject(next);
+  };
+
+  window.prevHeroProject = function() {
+    const prev = (currentHeroIndex - 1 + heroProjects.length) % heroProjects.length;
+    window.setHeroProject(prev);
+  };
 });

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -202,56 +202,108 @@
           </div>
 
           <!-- Hero Visual Feature Card with Ghana Flag Badge -->
+          <!-- Hero Visual Feature Card with Interactive Project Switcher -->
           <div class="lg:col-span-5">
             <div class="relative group">
               <div class="absolute -inset-1.5 bg-gradient-to-r from-amber-600 to-amber-400 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-500"></div>
               
               <div class="relative rounded-2xl bg-slate-900 border border-slate-700/80 overflow-hidden shadow-2xl">
-                <div class="relative h-64 sm:h-72 w-full overflow-hidden zoom-container">
-                  <img src="assets/images/bungalow-3bed-ejisu.jpg" alt="3-Bedroom Bungalow, Ejisu by Lawgee Construction" class="w-full h-full object-cover object-center cursor-pointer lightbox-trigger" data-img="assets/images/bungalow-3bed-ejisu.jpg" data-title="3-Bedroom Bungalow, Ejisu" data-desc="Featured contemporary residential design with rooftop terrace, green hip roof, and carport by Lawgee Construction Works.">
+                
+                <!-- Main Featured Visual Container -->
+                <div class="relative h-72 sm:h-80 w-full overflow-hidden zoom-container bg-slate-950">
+                  <img id="heroProjectImg" src="assets/images/modern-residence-floorplan-30x30.jpg" alt="Ahuja Contemporary Residence (G+1)" class="w-full h-full object-cover object-top cursor-pointer lightbox-trigger transition-all duration-500" data-img="assets/images/modern-residence-floorplan-30x30.jpg" data-title="Ahuja Contemporary Residence (G+1)" data-desc="Modern two-storey luxury elevation featuring complete 30'x30' ground and first floor plans with car parking, master suite, drawing room, and family lounge.">
                   
-                  <div class="absolute top-3 left-3 bg-brand-navy/90 backdrop-blur-md text-amber-300 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/30 flex items-center gap-1.5">
-                    <i class="fa-solid fa-star text-[10px]"></i> Featured Project
+                  <div class="absolute top-3 left-3 bg-brand-navy/90 backdrop-blur-md text-amber-300 text-xs font-bold px-3 py-1 rounded-full border border-amber-500/30 flex items-center gap-1.5 z-10 shadow-md">
+                    <i class="fa-solid fa-star text-[10px] text-amber-400"></i>
+                    <span>Featured Project</span>
                   </div>
 
-                  <div class="absolute top-3 right-3 bg-slate-950/85 backdrop-blur-md text-slate-200 text-xs px-2.5 py-1 rounded-full border border-amber-400/40 flex items-center gap-1.5 shadow-md">
+                  <div class="absolute top-3 right-3 bg-slate-950/90 backdrop-blur-md text-slate-200 text-xs px-2.5 py-1 rounded-full border border-amber-400/40 flex items-center gap-1.5 z-10 shadow-md">
                     <img src="assets/images/ghana-flag.png" alt="Ghana" class="w-4 h-2.5 object-cover rounded-xs">
                     <span class="text-[10px] font-bold text-amber-300 uppercase tracking-wider">Ghana BRRI</span>
                   </div>
 
-                  <div class="absolute bottom-3 right-3 bg-black/75 backdrop-blur-sm text-white text-xs px-2.5 py-1 rounded-md flex items-center gap-1 cursor-pointer lightbox-trigger" data-img="assets/images/bungalow-3bed-ejisu.jpg" data-title="3-Bedroom Bungalow, Ejisu" data-desc="Click to zoom and view full resolution architectural render">
-                    <i class="fa-solid fa-expand text-[10px]"></i> View Full
+                  <!-- Next / Prev Controls Over Image -->
+                  <div class="absolute inset-y-0 left-2 flex items-center z-10">
+                    <button type="button" onclick="prevHeroProject()" class="w-8 h-8 rounded-full bg-black/60 hover:bg-amber-600 text-white flex items-center justify-center backdrop-blur-sm transition-all cursor-pointer shadow-md" aria-label="Previous project">
+                      <i class="fa-solid fa-chevron-left text-xs"></i>
+                    </button>
+                  </div>
+                  <div class="absolute inset-y-0 right-2 flex items-center z-10">
+                    <button type="button" onclick="nextHeroProject()" class="w-8 h-8 rounded-full bg-black/60 hover:bg-amber-600 text-white flex items-center justify-center backdrop-blur-sm transition-all cursor-pointer shadow-md" aria-label="Next project">
+                      <i class="fa-solid fa-chevron-right text-xs"></i>
+                    </button>
+                  </div>
+
+                  <!-- Bottom Bar Over Image: View Full & Counter -->
+                  <div class="absolute bottom-3 inset-x-3 flex items-center justify-between z-10">
+                    <span id="heroProjectCounter" class="bg-black/80 backdrop-blur-md text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-md">
+                      1 / 6
+                    </span>
+                    <button id="heroProjectFullBtn" type="button" class="lightbox-trigger bg-black/80 hover:bg-amber-600 backdrop-blur-md text-white text-xs px-3 py-1 rounded-md flex items-center gap-1.5 transition-colors cursor-pointer shadow-md" data-img="assets/images/modern-residence-floorplan-30x30.jpg" data-title="Ahuja Contemporary Residence (G+1)">
+                      <i class="fa-solid fa-expand text-[10px]"></i> View Full Plan
+                    </button>
                   </div>
                 </div>
 
+                <!-- Card Details Body -->
                 <div class="p-5 bg-slate-900 space-y-3">
-                  <div class="flex items-start justify-between">
+                  <div class="flex items-start justify-between gap-2">
                     <div>
-                      <h2 class="text-lg font-bold text-white">3-Bedroom Bungalow Design</h2>
-                      <p class="text-xs text-slate-400 flex items-center gap-1 mt-0.5">
-                        <i class="fa-solid fa-location-dot text-amber-400 text-[10px]"></i> Ejisu, Ashanti Region
+                      <h2 id="heroProjectTitle" class="text-base sm:text-lg font-bold text-white leading-snug">Ahuja Contemporary Residence (G+1)</h2>
+                      <p id="heroProjectLocation" class="text-xs text-slate-400 flex items-center gap-1 mt-0.5">
+                        <i class="fa-solid fa-location-dot text-amber-400 text-[10px]"></i> Ashanti Region, Ghana
                       </p>
                     </div>
-                    <span class="text-xs font-semibold px-2.5 py-1 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30">
-                      Residential
+                    <span id="heroProjectCategory" class="text-[11px] font-semibold px-2.5 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/30 flex-shrink-0">
+                      3D & 30'x30' Plan
                     </span>
                   </div>
 
-                  <p class="text-xs text-slate-300 leading-relaxed">
-                    Custom architectural floor plan with upper terrace balcony, landscaped veranda, and certified structural engineering drawings.
+                  <p id="heroProjectDesc" class="text-xs text-slate-300 leading-relaxed line-clamp-2">
+                    Modern two-storey luxury elevation featuring complete 30'x30' ground and first floor plans with car parking, master suite, drawing room, and family lounge.
                   </p>
 
-                  <div class="pt-3 border-t border-slate-800 grid grid-cols-2 gap-2 text-center text-xs">
+                  <!-- 6 Thumbnail Selectors Strip -->
+                  <div class="pt-2 border-t border-slate-800">
+                    <div class="text-[10px] font-semibold text-slate-400 uppercase tracking-wider mb-1.5 flex items-center justify-between">
+                      <span>Click Project to Preview:</span>
+                      <a href="#featured-projects-section" class="text-amber-400 hover:underline">View All &darr;</a>
+                    </div>
+                    <div class="grid grid-cols-6 gap-1.5">
+                      <button type="button" onclick="setHeroProject(0)" class="hero-thumb-btn h-11 rounded-lg overflow-hidden border border-slate-700 ring-2 ring-amber-500 opacity-100 scale-105 transition-all cursor-pointer" title="Ahuja 3D & 30'x30' Floor Plan">
+                        <img src="assets/images/modern-residence-floorplan-30x30.jpg" alt="Ahuja Residence" class="w-full h-full object-cover">
+                      </button>
+                      <button type="button" onclick="setHeroProject(1)" class="hero-thumb-btn h-11 rounded-lg overflow-hidden border border-slate-700 opacity-60 hover:opacity-100 transition-all cursor-pointer" title="Structural Dimensional Site">
+                        <img src="assets/images/structural-site-dimensions.jpg" alt="Site Dimensions" class="w-full h-full object-cover">
+                      </button>
+                      <button type="button" onclick="setHeroProject(2)" class="hero-thumb-btn h-11 rounded-lg overflow-hidden border border-slate-700 opacity-60 hover:opacity-100 transition-all cursor-pointer" title="Scaffolding to Luxury Finish">
+                        <img src="assets/images/construction-to-luxury-finish.jpg" alt="Luxury Finish" class="w-full h-full object-cover">
+                      </button>
+                      <button type="button" onclick="setHeroProject(3)" class="hero-thumb-btn h-11 rounded-lg overflow-hidden border border-slate-700 opacity-60 hover:opacity-100 transition-all cursor-pointer" title="Concept to Sandcrete Reality">
+                        <img src="assets/images/design-to-sandcrete-reality.jpg" alt="Sandcrete Reality" class="w-full h-full object-cover">
+                      </button>
+                      <button type="button" onclick="setHeroProject(4)" class="hero-thumb-btn h-11 rounded-lg overflow-hidden border border-slate-700 opacity-60 hover:opacity-100 transition-all cursor-pointer" title="4m Narrow Urban Villa">
+                        <img src="assets/images/compact-narrow-4m-residence.jpg" alt="Narrow Villa" class="w-full h-full object-cover">
+                      </button>
+                      <button type="button" onclick="setHeroProject(5)" class="hero-thumb-btn h-11 rounded-lg overflow-hidden border border-slate-700 opacity-60 hover:opacity-100 transition-all cursor-pointer" title="3-Bedroom Bungalow">
+                        <img src="assets/images/bungalow-3bed-ejisu.jpg" alt="Bungalow" class="w-full h-full object-cover">
+                      </button>
+                    </div>
+                  </div>
+
+                  <div class="pt-2 border-t border-slate-800 grid grid-cols-2 gap-2 text-center text-xs">
                     <div class="bg-slate-800/80 p-2 rounded-lg">
-                      <div class="text-amber-400 font-bold">100% Certified</div>
-                      <div class="text-slate-400 text-[10px]">Permit-Ready Plans</div>
+                      <div id="heroProjectStat1" class="text-amber-400 font-bold">900 Sq Ft | G+1</div>
+                      <div id="heroProjectStat1Sub" class="text-slate-400 text-[10px]">Full 30'x30' Plans</div>
                     </div>
                     <div class="bg-slate-800/80 p-2 rounded-lg">
-                      <div class="text-emerald-400 font-bold">Ghana BRRI</div>
-                      <div class="text-slate-400 text-[10px]">Building Code Standards</div>
+                      <div id="heroProjectStat2" class="text-emerald-400 font-bold">100% Certified</div>
+                      <div id="heroProjectStat2Sub" class="text-slate-400 text-[10px]">Permit-Ready Package</div>
                     </div>
                   </div>
                 </div>
+
               </div>
             </div>
           </div>
@@ -416,6 +468,225 @@
             <span>Explore all 8 services (Structural Drawings, Site Plans, Block Moulding, Farm Lands)</span>
             <i class="fa-solid fa-arrow-right text-xs"></i>
           </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects & Live Construction Works Showcase (User Requested) -->
+    <section id="featured-projects-section" class="py-20 bg-slate-900 text-white relative overflow-hidden border-y border-slate-800">
+      <!-- Ambient Background Glows -->
+      <div class="absolute top-0 right-1/4 w-96 h-96 bg-amber-500/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute bottom-0 left-1/4 w-96 h-96 bg-blue-600/10 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute inset-0 opacity-5 pointer-events-none bg-blueprint"></div>
+
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 space-y-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
+          <div class="space-y-3 max-w-2xl">
+            <div class="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-amber-500/20 border border-amber-500/30 text-amber-300 text-xs font-semibold uppercase tracking-wider">
+              <i class="fa-solid fa-star text-amber-400"></i> Featured Project Showcase
+            </div>
+            <h2 class="text-3xl sm:text-4xl font-extrabold font-heading text-white tracking-tight">
+              Designs Built to Last, <span class="italic font-serif text-gold-gradient font-light">Executed with Precision.</span>
+            </h2>
+            <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+              Explore our featured architectural working drawings, active Ghanaian structural sites with verified dimensions, and completed turnkey residences.
+            </p>
+          </div>
+          <div class="flex items-center gap-3">
+            <a href="portfolio.html" class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-white text-xs font-semibold border border-slate-700 transition-colors">
+              <span>View Full Portfolio</span>
+              <i class="fa-solid fa-arrow-right text-xs"></i>
+            </a>
+            <button type="button" onclick="openQuoteModal()" class="open-quote-modal inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gold-gradient hover:opacity-95 text-brand-navy text-xs font-bold uppercase tracking-wider transition-all cursor-pointer shadow-lg shadow-amber-900/30">
+              <span>Get a Quote</span>
+              <i class="fa-solid fa-calculator text-xs"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- 6 Featured Projects Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          <!-- Project 1: Ahuja Residence 3D & 30x30 Floor Plan -->
+          <div class="group bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-900/20 transition-all duration-300 flex flex-col">
+            <div class="relative h-64 overflow-hidden zoom-container bg-slate-900">
+              <img src="assets/images/modern-residence-floorplan-30x30.jpg" alt="Ahuja Modern Residence with 30x30 Floor Plan" class="w-full h-full object-cover object-top cursor-pointer lightbox-trigger" data-img="assets/images/modern-residence-floorplan-30x30.jpg" data-title="Ahuja Contemporary Residence (900 Sq Ft | G+1)" data-desc="Complete architectural package featuring modern two-storey 3D elevation and detailed 30'x30' ground and first floor working plans with room dimensions.">
+              <span class="absolute top-3 left-3 bg-brand-navy/90 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-amber-500/30">
+                3D & 30'x30' Floor Plan
+              </span>
+              <button type="button" class="lightbox-trigger absolute bottom-3 right-3 bg-black/80 hover:bg-amber-600 text-white text-xs px-2.5 py-1 rounded flex items-center gap-1 transition-colors cursor-pointer" data-img="assets/images/modern-residence-floorplan-30x30.jpg" data-title="Ahuja Contemporary Residence (900 Sq Ft | G+1)">
+                <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> Zoom Plan
+              </button>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="font-heading font-bold text-lg text-white group-hover:text-amber-400 transition-colors">
+                  Ahuja Modern Residence (G+1)
+                </h3>
+                <p class="text-xs text-amber-400 font-medium mt-0.5">3D Perspective + 30'x30' Floor Plans</p>
+                <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                  Two-storey luxury elevation with 30'x30' structural layout: drawing room, family lounge, master bedroom suite, parking, and terrace balcony.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-[11px] text-slate-400"><i class="fa-solid fa-ruler-combined text-amber-400"></i> 900 Sq Ft (G+1)</span>
+                <button type="button" onclick="openQuoteModal('Ahuja Modern Residence (3D & 30x30 Floor Plan)')" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer">
+                  Request Design &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Active Structural Site with Dimensions -->
+          <div class="group bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-900/20 transition-all duration-300 flex flex-col">
+            <div class="relative h-64 overflow-hidden zoom-container bg-slate-900">
+              <img src="assets/images/structural-site-dimensions.jpg" alt="Active Structural Site with Verified Dimensions" class="w-full h-full object-cover object-center cursor-pointer lightbox-trigger" data-img="assets/images/structural-site-dimensions.jpg" data-title="Structural Site Execution (Verified Dimensions)" data-desc="Real active construction site showing reinforced sandcrete blockwork with certified engineering measurements (8.90m span, 5.50m garage, 2.80m ground height).">
+              <span class="absolute top-3 left-3 bg-emerald-950/90 text-emerald-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-emerald-500/30">
+                Active Site Execution
+              </span>
+              <button type="button" class="lightbox-trigger absolute bottom-3 right-3 bg-black/80 hover:bg-amber-600 text-white text-xs px-2.5 py-1 rounded flex items-center gap-1 transition-colors cursor-pointer" data-img="assets/images/structural-site-dimensions.jpg" data-title="Structural Site Execution (Verified Dimensions)">
+                <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> Zoom Dimensions
+              </button>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="font-heading font-bold text-lg text-white group-hover:text-amber-400 transition-colors">
+                  Structural Dimensional Site
+                </h3>
+                <p class="text-xs text-emerald-400 font-medium mt-0.5">8.90m Span · 5.50m Garage · 2.80m Height</p>
+                <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                  Real Ghanaian construction site executing two-storey reinforced sandcrete blockwork adhering to strict Lands Commission and BRRI building tolerances.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-[11px] text-slate-400"><i class="fa-solid fa-shield-halved text-emerald-400"></i> Ghana BRRI Standards</span>
+                <button type="button" onclick="openQuoteModal('Building Construction (Structural Execution)')" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer">
+                  Inquire Construction &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Scaffolding to Luxury Contemporary Finish -->
+          <div class="group bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-900/20 transition-all duration-300 flex flex-col">
+            <div class="relative h-64 overflow-hidden zoom-container bg-slate-900">
+              <img src="assets/images/construction-to-luxury-finish.jpg" alt="Turnkey Transformation: Scaffolding to Luxury Finish" class="w-full h-full object-cover object-center cursor-pointer lightbox-trigger" data-img="assets/images/construction-to-luxury-finish.jpg" data-title="Turnkey Execution: Concrete Structure to Finished Luxury" data-desc="Complete project lifecycle comparison: Top shows reinforced concrete framing with site scaffolding; bottom shows completed contemporary residence with architectural strip lighting.">
+              <span class="absolute top-3 left-3 bg-amber-950/90 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-amber-500/30">
+                Turnkey Lifecycle
+              </span>
+              <button type="button" class="lightbox-trigger absolute bottom-3 right-3 bg-black/80 hover:bg-amber-600 text-white text-xs px-2.5 py-1 rounded flex items-center gap-1 transition-colors cursor-pointer" data-img="assets/images/construction-to-luxury-finish.jpg" data-title="Turnkey Execution: Concrete Structure to Finished Luxury">
+                <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> Zoom Before/After
+              </button>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="font-heading font-bold text-lg text-white group-hover:text-amber-400 transition-colors">
+                  Scaffolding to Luxury Finish
+                </h3>
+                <p class="text-xs text-amber-400 font-medium mt-0.5">Turnkey Handover Comparison</p>
+                <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                  End-to-end management from the raw structural masonry and wooden scaffolding phase to a finished luxury black contemporary home with integrated landscape lighting.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-[11px] text-slate-400"><i class="fa-solid fa-key text-amber-400"></i> Ground-to-Handover</span>
+                <button type="button" onclick="openQuoteModal('Turnkey Construction Handover')" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer">
+                  Start Your Build &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Concept to Sandcrete Reality -->
+          <div class="group bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-900/20 transition-all duration-300 flex flex-col">
+            <div class="relative h-64 overflow-hidden zoom-container bg-slate-900">
+              <img src="assets/images/design-to-sandcrete-reality.jpg" alt="Concept to Sandcrete Reality" class="w-full h-full object-cover object-center cursor-pointer lightbox-trigger" data-img="assets/images/design-to-sandcrete-reality.jpg" data-title="Fidelity: 3D Render vs Active Sandcrete Blockwork" data-desc="Top: Photorealistic single-storey contemporary villa render. Bottom: Active on-site sandcrete block moulding and wall erection showing identical architectural proportions.">
+              <span class="absolute top-3 left-3 bg-blue-950/90 text-blue-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-blue-500/30">
+                1:1 Masonry Fidelity
+              </span>
+              <button type="button" class="lightbox-trigger absolute bottom-3 right-3 bg-black/80 hover:bg-amber-600 text-white text-xs px-2.5 py-1 rounded flex items-center gap-1 transition-colors cursor-pointer" data-img="assets/images/design-to-sandcrete-reality.jpg" data-title="Fidelity: 3D Render vs Active Sandcrete Blockwork">
+                <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> Zoom Compare
+              </button>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="font-heading font-bold text-lg text-white group-hover:text-amber-400 transition-colors">
+                  Render to Sandcrete Reality
+                </h3>
+                <p class="text-xs text-blue-400 font-medium mt-0.5">High-Density Sandcrete Masonry</p>
+                <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                  Single-storey modern villa concept executed with Ghana-standard high compressive strength sandcrete blocks moulded on site for flawless durability.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-[11px] text-slate-400"><i class="fa-solid fa-cubes text-blue-400"></i> Sandcrete Blocks</span>
+                <button type="button" onclick="openQuoteModal('Sandcrete Block Moulding & Masonry')" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer">
+                  Order Blocks &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Compact 4m Narrow Urban Villa -->
+          <div class="group bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-900/20 transition-all duration-300 flex flex-col">
+            <div class="relative h-64 overflow-hidden zoom-container bg-slate-900">
+              <img src="assets/images/compact-narrow-4m-residence.jpg" alt="Compact 4m Narrow Urban Villa" class="w-full h-full object-cover object-top cursor-pointer lightbox-trigger" data-img="assets/images/compact-narrow-4m-residence.jpg" data-title="4m Narrow-Lot Modern Urban Villa" data-desc="Intelligent architectural optimization for narrow urban land parcels: 4-meter frontage luxury two-storey home with exterior spiral staircase, glass terrace, and paved courtyard.">
+              <span class="absolute top-3 left-3 bg-purple-950/90 text-purple-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-purple-500/30">
+                Narrow-Lot Innovation
+              </span>
+              <button type="button" class="lightbox-trigger absolute bottom-3 right-3 bg-black/80 hover:bg-amber-600 text-white text-xs px-2.5 py-1 rounded flex items-center gap-1 transition-colors cursor-pointer" data-img="assets/images/compact-narrow-4m-residence.jpg" data-title="4m Narrow-Lot Modern Urban Villa">
+                <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> Zoom Villa
+              </button>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="font-heading font-bold text-lg text-white group-hover:text-amber-400 transition-colors">
+                  Modern 4m Urban Villa
+                </h3>
+                <p class="text-xs text-purple-400 font-medium mt-0.5">Narrow Plot Architectural Design</p>
+                <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                  Maximizing tight plots with 4-meter frontage: two-storey layout, exterior spiral staircase, natural lighting, and private courtyard parking.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-[11px] text-slate-400"><i class="fa-solid fa-arrows-left-right text-purple-400"></i> 4m Frontage</span>
+                <button type="button" onclick="openQuoteModal('4m Narrow Plot Urban Design')" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer">
+                  Request Design &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: 3-Bedroom Bungalow, Ejisu -->
+          <div class="group bg-slate-950 rounded-2xl border border-slate-800 overflow-hidden hover:border-amber-500/50 hover:shadow-2xl hover:shadow-amber-900/20 transition-all duration-300 flex flex-col">
+            <div class="relative h-64 overflow-hidden zoom-container bg-slate-900">
+              <img src="assets/images/bungalow-3bed-ejisu.jpg" alt="3-Bedroom Bungalow, Ejisu" class="w-full h-full object-cover object-center cursor-pointer lightbox-trigger" data-img="assets/images/bungalow-3bed-ejisu.jpg" data-title="3-Bedroom Bungalow Design, Ejisu" data-desc="Featured contemporary residential design with rooftop terrace, green hip roof, and carport by Lawgee Construction Works.">
+              <span class="absolute top-3 left-3 bg-brand-navy/90 text-amber-300 text-[10px] font-bold px-2.5 py-1 rounded-md border border-amber-500/30">
+                Residential Design
+              </span>
+              <button type="button" class="lightbox-trigger absolute bottom-3 right-3 bg-black/80 hover:bg-amber-600 text-white text-xs px-2.5 py-1 rounded flex items-center gap-1 transition-colors cursor-pointer" data-img="assets/images/bungalow-3bed-ejisu.jpg" data-title="3-Bedroom Bungalow Design, Ejisu">
+                <i class="fa-solid fa-magnifying-glass-plus text-[10px]"></i> Zoom Bungalow
+              </button>
+            </div>
+            <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+              <div>
+                <h3 class="font-heading font-bold text-lg text-white group-hover:text-amber-400 transition-colors">
+                  3-Bedroom Bungalow, Ejisu
+                </h3>
+                <p class="text-xs text-amber-400 font-medium mt-0.5">Contemporary Family Bungalow</p>
+                <p class="text-xs text-slate-400 mt-2.5 leading-relaxed">
+                  Spacious family bungalow design featuring an arched front entrance, upper leisure balcony terrace, and landscaped garden frontage.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-slate-800 flex items-center justify-between">
+                <span class="text-[11px] text-slate-400"><i class="fa-solid fa-location-dot text-amber-400"></i> Ejisu, Ashanti</span>
+                <button type="button" onclick="openQuoteModal('3-Bedroom Bungalow Design')" class="text-xs font-bold text-amber-400 hover:text-amber-300 flex items-center gap-1 cursor-pointer">
+                  Request Quote &rarr;
+                </button>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
