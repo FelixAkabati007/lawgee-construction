@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
@@ -148,26 +148,26 @@
       </div>
     </section>
 
-    <!-- Filter Buttons Bar -->
-    <section class="py-6 bg-white border-b border-slate-200 sticky top-20 z-30 shadow-sm">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-wrap items-center justify-between gap-4">
+    <!-- Filter Buttons Bar (Swipeable on Mobile) -->
+    <section class="py-4 sm:py-6 bg-white border-b border-slate-200 sticky top-20 z-30 shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4">
         <div class="flex items-center gap-2 text-xs font-semibold text-slate-500">
           <i class="fa-solid fa-filter text-amber-600"></i> Filter Portfolio by Category:
         </div>
-        <div class="flex flex-wrap items-center gap-2">
-          <button type="button" class="portfolio-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-amber-600 text-white shadow-md transition-all cursor-pointer" data-filter="all">
+        <div class="flex items-center gap-2 overflow-x-auto pb-1.5 sm:pb-0 no-scrollbar w-full sm:w-auto flex-nowrap sm:flex-wrap">
+          <button type="button" class="portfolio-filter-btn flex-shrink-0 px-3.5 py-2 rounded-lg text-xs font-semibold bg-amber-600 text-white shadow-md transition-all cursor-pointer" data-filter="all">
             All Projects
           </button>
-          <button type="button" class="portfolio-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer" data-filter="residential">
+          <button type="button" class="portfolio-filter-btn flex-shrink-0 px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer" data-filter="residential">
             3D Elevations
           </button>
-          <button type="button" class="portfolio-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer" data-filter="floorplans">
+          <button type="button" class="portfolio-filter-btn flex-shrink-0 px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer" data-filter="floorplans">
             Floor Plans
           </button>
-          <button type="button" class="portfolio-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer" data-filter="construction">
+          <button type="button" class="portfolio-filter-btn flex-shrink-0 px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer" data-filter="construction">
             Active Site & Structural
           </button>
-          <button type="button" class="portfolio-filter-btn px-4 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer" data-filter="credentials">
+          <button type="button" class="portfolio-filter-btn flex-shrink-0 px-3.5 py-2 rounded-lg text-xs font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition-all cursor-pointer" data-filter="credentials">
             Credentials & Legal
           </button>
         </div>
@@ -183,7 +183,7 @@
           <!-- New Project 1: Ahuja Residence 3D & 30x30 Floor Plan -->
           <div class="portfolio-item group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="residential floorplans">
             <div class="relative h-64 overflow-hidden zoom-container bg-slate-100">
-              <img src="assets/images/modern-residence-floorplan-30x30.jpg" alt="Ahuja Modern Residence (G+1) 3D & 30x30 Floor Plan" class="w-full h-full object-cover object-top lightbox-trigger cursor-pointer" data-img="assets/images/modern-residence-floorplan-30x30.jpg" data-title="Ahuja Contemporary Residence (900 Sq Ft | G+1)" data-desc="Complete architectural package featuring modern two-storey 3D elevation and detailed 30'x30' ground and first floor working plans with room dimensions.">
+              <img loading="lazy" decoding="async" src="assets/images/modern-residence-floorplan-30x30.jpg" alt="Ahuja Modern Residence (G+1) 3D & 30x30 Floor Plan" class="w-full h-full object-cover object-top lightbox-trigger cursor-pointer" data-img="assets/images/modern-residence-floorplan-30x30.jpg" data-title="Ahuja Contemporary Residence (900 Sq Ft | G+1)" data-desc="Complete architectural package featuring modern two-storey 3D elevation and detailed 30'x30' ground and first floor working plans with room dimensions.">
               <div class="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <button type="button" class="lightbox-trigger p-3 rounded-full bg-white text-slate-900 shadow-lg hover:bg-amber-500 hover:text-white transition-all cursor-pointer" data-img="assets/images/modern-residence-floorplan-30x30.jpg" data-title="Ahuja Contemporary Residence (900 Sq Ft | G+1)">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -215,7 +215,7 @@
           <!-- New Project 2: Active Structural Site with Measured Dimensions -->
           <div class="portfolio-item group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="construction">
             <div class="relative h-64 overflow-hidden zoom-container bg-slate-100">
-              <img src="assets/images/structural-site-dimensions.jpg" alt="Active Structural Site with Verified Dimensions" class="w-full h-full object-cover object-center lightbox-trigger cursor-pointer" data-img="assets/images/structural-site-dimensions.jpg" data-title="Structural Site Execution (Verified Dimensions)" data-desc="Real active construction site showing reinforced sandcrete blockwork with certified engineering measurements (8.90m span, 5.50m garage, 2.80m ground height).">
+              <img loading="lazy" decoding="async" src="assets/images/structural-site-dimensions.jpg" alt="Active Structural Site with Verified Dimensions" class="w-full h-full object-cover object-center lightbox-trigger cursor-pointer" data-img="assets/images/structural-site-dimensions.jpg" data-title="Structural Site Execution (Verified Dimensions)" data-desc="Real active construction site showing reinforced sandcrete blockwork with certified engineering measurements (8.90m span, 5.50m garage, 2.80m ground height).">
               <div class="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <button type="button" class="lightbox-trigger p-3 rounded-full bg-white text-slate-900 shadow-lg hover:bg-amber-500 hover:text-white transition-all cursor-pointer" data-img="assets/images/structural-site-dimensions.jpg" data-title="Structural Site Execution (Verified Dimensions)">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -247,7 +247,7 @@
           <!-- New Project 3: Scaffolding to Luxury Contemporary Finish -->
           <div class="portfolio-item group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="construction residential">
             <div class="relative h-64 overflow-hidden zoom-container bg-slate-100">
-              <img src="assets/images/construction-to-luxury-finish.jpg" alt="Turnkey Execution: Concrete Structure to Finished Luxury" class="w-full h-full object-cover object-center lightbox-trigger cursor-pointer" data-img="assets/images/construction-to-luxury-finish.jpg" data-title="Turnkey Execution: Concrete Structure to Finished Luxury" data-desc="Complete project lifecycle comparison: Top shows reinforced concrete framing with site scaffolding; bottom shows completed contemporary residence with architectural strip lighting.">
+              <img loading="lazy" decoding="async" src="assets/images/construction-to-luxury-finish.jpg" alt="Turnkey Execution: Concrete Structure to Finished Luxury" class="w-full h-full object-cover object-center lightbox-trigger cursor-pointer" data-img="assets/images/construction-to-luxury-finish.jpg" data-title="Turnkey Execution: Concrete Structure to Finished Luxury" data-desc="Complete project lifecycle comparison: Top shows reinforced concrete framing with site scaffolding; bottom shows completed contemporary residence with architectural strip lighting.">
               <div class="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <button type="button" class="lightbox-trigger p-3 rounded-full bg-white text-slate-900 shadow-lg hover:bg-amber-500 hover:text-white transition-all cursor-pointer" data-img="assets/images/construction-to-luxury-finish.jpg" data-title="Turnkey Execution: Concrete Structure to Finished Luxury">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -279,7 +279,7 @@
           <!-- New Project 4: Concept to Sandcrete Reality -->
           <div class="portfolio-item group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="construction residential">
             <div class="relative h-64 overflow-hidden zoom-container bg-slate-100">
-              <img src="assets/images/design-to-sandcrete-reality.jpg" alt="Concept to Sandcrete Reality" class="w-full h-full object-cover object-center lightbox-trigger cursor-pointer" data-img="assets/images/design-to-sandcrete-reality.jpg" data-title="Fidelity: 3D Render vs Active Sandcrete Blockwork" data-desc="Top: Photorealistic single-storey contemporary villa render. Bottom: Active on-site sandcrete block moulding and wall erection showing identical architectural proportions.">
+              <img loading="lazy" decoding="async" src="assets/images/design-to-sandcrete-reality.jpg" alt="Concept to Sandcrete Reality" class="w-full h-full object-cover object-center lightbox-trigger cursor-pointer" data-img="assets/images/design-to-sandcrete-reality.jpg" data-title="Fidelity: 3D Render vs Active Sandcrete Blockwork" data-desc="Top: Photorealistic single-storey contemporary villa render. Bottom: Active on-site sandcrete block moulding and wall erection showing identical architectural proportions.">
               <div class="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <button type="button" class="lightbox-trigger p-3 rounded-full bg-white text-slate-900 shadow-lg hover:bg-amber-500 hover:text-white transition-all cursor-pointer" data-img="assets/images/design-to-sandcrete-reality.jpg" data-title="Fidelity: 3D Render vs Active Sandcrete Blockwork">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -311,7 +311,7 @@
           <!-- New Project 5: Compact 4m Narrow Urban Villa -->
           <div class="portfolio-item group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="residential">
             <div class="relative h-64 overflow-hidden zoom-container bg-slate-100">
-              <img src="assets/images/compact-narrow-4m-residence.jpg" alt="Compact 4m Narrow Urban Villa" class="w-full h-full object-cover object-top lightbox-trigger cursor-pointer" data-img="assets/images/compact-narrow-4m-residence.jpg" data-title="4m Narrow-Lot Modern Urban Villa" data-desc="Intelligent architectural optimization for narrow urban land parcels: 4-meter frontage luxury two-storey home with exterior spiral staircase, glass terrace, and paved courtyard.">
+              <img loading="lazy" decoding="async" src="assets/images/compact-narrow-4m-residence.jpg" alt="Compact 4m Narrow Urban Villa" class="w-full h-full object-cover object-top lightbox-trigger cursor-pointer" data-img="assets/images/compact-narrow-4m-residence.jpg" data-title="4m Narrow-Lot Modern Urban Villa" data-desc="Intelligent architectural optimization for narrow urban land parcels: 4-meter frontage luxury two-storey home with exterior spiral staircase, glass terrace, and paved courtyard.">
               <div class="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <button type="button" class="lightbox-trigger p-3 rounded-full bg-white text-slate-900 shadow-lg hover:bg-amber-500 hover:text-white transition-all cursor-pointer" data-img="assets/images/compact-narrow-4m-residence.jpg" data-title="4m Narrow-Lot Modern Urban Villa">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -343,7 +343,7 @@
           <!-- Project 1: 3-Bedroom Bungalow, Ejisu -->
           <div class="portfolio-item group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="residential">
             <div class="relative h-64 overflow-hidden zoom-container bg-slate-100">
-              <img src="assets/images/bungalow-3bed-ejisu.jpg" alt="3-Bedroom Bungalow, Ejisu" class="w-full h-full object-cover lightbox-trigger cursor-pointer" data-img="assets/images/bungalow-3bed-ejisu.jpg" data-title="3-Bedroom Bungalow, Ejisu" data-desc="Featured contemporary residential design with rooftop terrace, green hip roof, and carport by Lawgee Construction Works.">
+              <img loading="lazy" decoding="async" src="assets/images/bungalow-3bed-ejisu.jpg" alt="3-Bedroom Bungalow, Ejisu" class="w-full h-full object-cover lightbox-trigger cursor-pointer" data-img="assets/images/bungalow-3bed-ejisu.jpg" data-title="3-Bedroom Bungalow, Ejisu" data-desc="Featured contemporary residential design with rooftop terrace, green hip roof, and carport by Lawgee Construction Works.">
               <div class="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <button type="button" class="lightbox-trigger p-3 rounded-full bg-white text-slate-900 shadow-lg hover:bg-amber-500 hover:text-white transition-all" data-img="assets/images/bungalow-3bed-ejisu.jpg" data-title="3-Bedroom Bungalow, Ejisu" data-desc="Click to zoom and view full resolution architectural render">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -376,7 +376,7 @@
           <div class="portfolio-item group bg-white rounded-2xl border border-amber-300 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col lg:col-span-2" data-category="floorplans">
             <div class="grid grid-cols-1 sm:grid-cols-2">
               <div class="relative h-64 sm:h-auto overflow-hidden zoom-container bg-slate-100">
-                <img src="assets/images/design-4bed-floorplan.jpg" alt="4-Bedroom Design with Floor Plan" class="w-full h-full object-cover lightbox-trigger cursor-pointer" data-img="assets/images/design-4bed-floorplan.jpg" data-title="4-Bedroom Design with Master Suite & Ground Plan" data-desc="Complete architectural perspective with red roof tiles and integrated ground plan layout.">
+                <img loading="lazy" decoding="async" src="assets/images/design-4bed-floorplan.jpg" alt="4-Bedroom Design with Floor Plan" class="w-full h-full object-cover lightbox-trigger cursor-pointer" data-img="assets/images/design-4bed-floorplan.jpg" data-title="4-Bedroom Design with Master Suite & Ground Plan" data-desc="Complete architectural perspective with red roof tiles and integrated ground plan layout.">
                 <div class="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                   <button type="button" class="lightbox-trigger p-3 rounded-full bg-white text-slate-900 shadow-lg hover:bg-amber-500 hover:text-white transition-all" data-img="assets/images/design-4bed-floorplan.jpg" data-title="4-Bedroom Design with Master Suite & Ground Plan">
                     <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -421,7 +421,7 @@
           <!-- Project 3: 3-Bedroom Residential Design, Ejisu (Maison de 9x10) -->
           <div class="portfolio-item group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="residential">
             <div class="relative h-64 overflow-hidden zoom-container bg-slate-100">
-              <img src="assets/images/residential-design-9x10.jpg" alt="3-Bedroom Residential Design, Ejisu" class="w-full h-full object-cover lightbox-trigger cursor-pointer" data-img="assets/images/residential-design-9x10.jpg" data-title="3-Bedroom Residential Design, Ejisu" data-desc="Maison de 9x10 compact luxury residential plan. Detailed architectural elevation with arched central entrance and symmetrical room distributions.">
+              <img loading="lazy" decoding="async" src="assets/images/residential-design-9x10.jpg" alt="3-Bedroom Residential Design, Ejisu" class="w-full h-full object-cover lightbox-trigger cursor-pointer" data-img="assets/images/residential-design-9x10.jpg" data-title="3-Bedroom Residential Design, Ejisu" data-desc="Maison de 9x10 compact luxury residential plan. Detailed architectural elevation with arched central entrance and symmetrical room distributions.">
               <div class="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <button type="button" class="lightbox-trigger p-3 rounded-full bg-white text-slate-900 shadow-lg hover:bg-amber-500 hover:text-white transition-all" data-img="assets/images/residential-design-9x10.jpg" data-title="3-Bedroom Residential Design, Ejisu">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -453,7 +453,7 @@
           <!-- Project 4: Architectural Floor Plan — Residential -->
           <div class="portfolio-item group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="floorplans">
             <div class="relative h-64 overflow-hidden zoom-container bg-slate-100">
-              <img src="assets/images/architectural-floorplan-detailed.jpg" alt="Architectural Floor Plan — Residential" class="w-full h-full object-cover lightbox-trigger cursor-pointer" data-img="assets/images/architectural-floorplan-detailed.jpg" data-title="Architectural Floor Plan — Residential" data-desc="Comprehensive architectural blueprint detailing plot dimensions, living quarters, vehicular parking, paved driveways, landscaped gardens, and corridor circulation.">
+              <img loading="lazy" decoding="async" src="assets/images/architectural-floorplan-detailed.jpg" alt="Architectural Floor Plan — Residential" class="w-full h-full object-cover lightbox-trigger cursor-pointer" data-img="assets/images/architectural-floorplan-detailed.jpg" data-title="Architectural Floor Plan — Residential" data-desc="Comprehensive architectural blueprint detailing plot dimensions, living quarters, vehicular parking, paved driveways, landscaped gardens, and corridor circulation.">
               <div class="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <button type="button" class="lightbox-trigger p-3 rounded-full bg-white text-slate-900 shadow-lg hover:bg-amber-500 hover:text-white transition-all" data-img="assets/images/architectural-floorplan-detailed.jpg" data-title="Architectural Floor Plan — Residential">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>
@@ -485,7 +485,7 @@
           <!-- Project 5: Company Credentials & Certificate -->
           <div class="portfolio-item group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col" data-category="credentials">
             <div class="relative h-64 overflow-hidden zoom-container bg-slate-100">
-              <img src="assets/images/registration-certificate.jpg" alt="Official Certificate of Registration BN396492016" class="w-full h-full object-cover object-top lightbox-trigger cursor-pointer" data-img="assets/images/registration-certificate.jpg" data-title="Official Certificate of Registration (BN396492016)" data-desc="Republic of Ghana - The Registration of Business Names Act, 1962 (No. 151). Lawgee Construction Works & Architectural Consult, registered on 28th November 2016.">
+              <img loading="lazy" decoding="async" src="assets/images/registration-certificate.jpg" alt="Official Certificate of Registration BN396492016" class="w-full h-full object-cover object-top lightbox-trigger cursor-pointer" data-img="assets/images/registration-certificate.jpg" data-title="Official Certificate of Registration (BN396492016)" data-desc="Republic of Ghana - The Registration of Business Names Act, 1962 (No. 151). Lawgee Construction Works & Architectural Consult, registered on 28th November 2016.">
               <div class="absolute inset-0 bg-brand-navy/30 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                 <button type="button" class="lightbox-trigger p-3 rounded-full bg-white text-slate-900 shadow-lg hover:bg-amber-500 hover:text-white transition-all" data-img="assets/images/registration-certificate.jpg" data-title="Official Certificate of Registration (BN396492016)">
                   <i class="fa-solid fa-magnifying-glass-plus"></i>

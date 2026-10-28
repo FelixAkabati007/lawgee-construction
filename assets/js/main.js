@@ -4,20 +4,47 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Mobile Menu Toggle
+  // 1. Mobile Menu Toggle & Touch Fluidity
   const mobileMenuBtn = document.getElementById('mobileMenuBtn');
   const mobileMenu = document.getElementById('mobileMenu');
 
+  function closeMobileMenu() {
+    if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.add('hidden');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'false');
+    }
+  }
+
+  function openMobileMenu() {
+    if (mobileMenu && mobileMenu.classList.contains('hidden')) {
+      mobileMenu.classList.remove('hidden');
+      mobileMenuBtn?.setAttribute('aria-expanded', 'true');
+    }
+  }
+
   if (mobileMenuBtn && mobileMenu) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isHidden = mobileMenu.classList.contains('hidden');
       if (isHidden) {
-        mobileMenu.classList.remove('hidden');
-        mobileMenuBtn.setAttribute('aria-expanded', 'true');
+        openMobileMenu();
       } else {
-        mobileMenu.classList.add('hidden');
-        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+        closeMobileMenu();
       }
+    });
+
+    // Close mobile menu when tapping outside
+    document.addEventListener('click', (e) => {
+      if (!mobileMenu.contains(e.target) && !mobileMenuBtn.contains(e.target)) {
+        closeMobileMenu();
+      }
+    });
+
+    // Close when tapping any link inside mobile menu
+    mobileMenu.querySelectorAll('a, button').forEach(el => {
+      el.addEventListener('click', () => {
+        closeMobileMenu();
+      });
     });
   }
 
@@ -145,6 +172,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (quoteModal && !quoteModal.classList.contains('hidden')) {
         window.closeQuoteModal();
       }
+      closeMobileMenu();
     }
   });
 
