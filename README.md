@@ -1,4 +1,4 @@
-# Lawgee Construction Works & Architectural Consult (LAWGEE CONSWARC)
+﻿# Lawgee Construction Works & Architectural Consult (LAWGEE CONSWARC)
 
 Official multi-page website for **Lawgee Construction Works & Architectural Consult**, located in Ejisu – Donaso, off Onwe Road, Ashanti Region, Ghana.
 
@@ -9,7 +9,7 @@ Official multi-page website for **Lawgee Construction Works & Architectural Cons
 - **Headquarters:** Ejisu – Donaso, off Onwe Road, Ashanti Region, Ghana
 - **Working Hours:** Monday to Saturday, 8:00 AM – 5:00 PM
 - **Phones / WhatsApp:** `0248 997 377` | `0247 621 249` | `0205 920 435`
-- **Email:** `kinggeorgejewel@gmail.com`
+- **Email:** `Info.Lawgeeconswarc@Gmail.com`
 
 ---
 

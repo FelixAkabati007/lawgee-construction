@@ -1,4 +1,4 @@
-/**
+﻿/**
  * Lawgee Construction Works & Architectural Consult
  * Main JavaScript Interactions across all pages
  */
@@ -195,7 +195,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (action === 'email') {
         const subject = encodeURIComponent(`Consultation Quote Request: ${name} - ${service}`);
         const body = encodeURIComponent(`Client Name: ${name}\nPhone: ${phone}\nEmail: ${email}\nService: ${service}\nLocation: ${location}\nBudget: ${budget}\nScale: ${size}\n\nProject Details:\n${details}`);
-        window.location.href = `mailto:kinggeorgejewel@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:Info.Lawgeeconswarc@Gmail.com?subject=${subject}&body=${body}`;
       } else {
         const message = `Hello Lawgee Construction & Architectural Consult,
 I would like to request an official quote / building design consultation:
@@ -239,7 +239,7 @@ Please contact me back to discuss. Thank you.`;
       } else {
         const subject = encodeURIComponent(`Consultation Enquiry: ${cName} - ${cService}`);
         const body = encodeURIComponent(`Client Name: ${cName}\nPhone: ${cPhone}\nEmail: ${cEmail}\nService: ${cService}\n\nProject Details:\n${cMsg}`);
-        window.location.href = `mailto:kinggeorgejewel@gmail.com?subject=${subject}&body=${body}`;
+        window.location.href = `mailto:Info.Lawgeeconswarc@Gmail.com?subject=${subject}&body=${body}`;
       }
     });
   }
